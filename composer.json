@@ -1,5 +1,5 @@
 {
-    "name": "JoaoAlvaro/ecommerce",
+    "name": "joaoalvaro/ecommerce",
     "authors": [
         {
             "name": "João Álvaro Cordeiro",
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\JoaoAlvaro\\php-classes\\src"
+            "Softmake\\": "vendor\\joaoalvaro\\php-classes\\src"
         }
     }
 }

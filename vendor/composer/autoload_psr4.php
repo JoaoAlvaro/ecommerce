@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '' => array($vendorDir . '/JoaoAlvaro/php-classes/src'),
+    'Softmake\\' => array($vendorDir . '/joaoalvaro/php-classes/src'),
 );
