@@ -2,17 +2,20 @@
 
 require_once("vendor/autoload.php");
 
-$app = new \Slim\Slim();
+use \Slim\Slim;
+use Softmake\Page;
+
+$app = new Slim();
 
 $app->config('debug', true);
 
 $app->get('/', function() {
     
-	$sql = new Softmake\DB\Sql();
+	$page = new Page();
 	
-	$results = $sql->select("SELECT * FROM tb_users");
+	$page->setTpl("index");
 	
-	echo json_encode($results);
+	
 });
 
 $app->run();
