@@ -96,6 +96,15 @@ $app->get('/administrador/users/:iduser/delete', function($iduser) {
     
 	User::verifyLogin();
 
+	$user = new User();
+
+	$user->get((int) $iduser);
+
+	$user->delete();
+
+	header("Location: /administrador/users");
+	exit;
+
 });
 
 $app->get('/administrador/users/:iduser', function($iduser) {
