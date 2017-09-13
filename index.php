@@ -76,20 +76,9 @@ $app->get('/administrador/users', function() {
 
 $app->get('/administrador/users/create', function() {
     
-	User::verifyLogin();
-
-	$user = new User();
-
-	$_POST["inadmin"] = (isset($_POST["inadmin"]))?1:0;
-
-	$user->setData($_POST);
-
-	$user->save();
-
-	header("Location: /administrador/users");
-	exit;
-
-	
+    User::verifyLogin();
+    $page = new PageAdmin();
+    $page->setTpl("users-create");
 });
 
 $app->get('/administrador/users/:iduser/delete', function($iduser) {
@@ -110,6 +99,8 @@ $app->get('/administrador/users/:iduser/delete', function($iduser) {
 $app->get('/administrador/users/:iduser', function($iduser) {
     
 	User::verifyLogin();
+
+	$user = new User();
 
 	$user->get((int)$iduser);
 
