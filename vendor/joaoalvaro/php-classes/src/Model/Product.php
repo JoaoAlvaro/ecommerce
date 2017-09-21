@@ -15,21 +15,20 @@ class Product extends Model{
 		return $sql->select("SELECT * FROM tb_products ORDER BY desprodutc");
 	}
 
-	public function save(){
+	public function save()
+	{
 		$sql = new Sql();
-		$results = $sql->select("CALL sp_produtcs_save(:idproduct, :desprodutc, :vlprice, :vlwidht, :vlheight, :vllenght, :desurl)",
-			 array(
+		$results = $sql->select("CALL sp_products_save(:idproduct, :desproduct, :vlprice, :vlwidth, :vlheight, :vllength, :vlweight, :desurl)", array(
 			":idproduct"=>$this->getidproduct(),
-			":desprodutc"=>$this->getdesproduct(),
+			":desproduct"=>$this->getdesproduct(),
 			":vlprice"=>$this->getvlprice(),
-			":vlwidht"=>$this->getvlprice(),
+			":vlwidth"=>$this->getvlwidth(),
 			":vlheight"=>$this->getvlheight(),
-			":vllenght"=>$this->getvllenght(),
+			":vllength"=>$this->getvllength(),
+			":vlweight"=>$this->getvlweight(),
 			":desurl"=>$this->getdesurl()
 		));
-		
 		$this->setData($results[0]);
-
 	}
 
 	public function get($idproduct){

@@ -45,15 +45,14 @@ $app->post("/administrador/products/create", function(){
 
 	User::verifyLogin();
 
-	$produtcts = new Product();
+	$product = new Product();
 
-	$products->setData($_POST);
+	$product->setData($_POST);
 
-	$produtcts->save();
+	$product->save();
 
 	header("Location: /administrador/products");
 	exit;
-
 
 });
 
