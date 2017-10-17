@@ -12,7 +12,7 @@ class Product extends Model{
 	public static function listAll(){
 
 		$sql = new Sql();
-		return $sql->select("SELECT * FROM tb_products ORDER BY desprodutc");
+		return $sql->select("SELECT * FROM tb_products ORDER BY desproduct");
 	}
 
 	public function save()
@@ -28,6 +28,7 @@ class Product extends Model{
 			":vlweight"=>$this->getvlweight(),
 			":desurl"=>$this->getdesurl()
 		));
+
 		$this->setData($results[0]);
 	}
 
